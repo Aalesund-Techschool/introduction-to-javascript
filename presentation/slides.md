@@ -168,6 +168,22 @@ let mutable = 'Can be changed' // Block-scoped
 const immutable = "Can't change*" // Block-scoped
 ```
 
+<div v-click>
+
+## Comments
+
+```js
+// comment
+// const iAmACommentedOutVariable = 'not running 🚶‍♀️'
+const iAmNotCommentedOut = 'Running 🏃‍♀️'
+
+/*
+const iAmInACommentBlock = '🤷‍♂️'
+*/
+```
+
+</div>
+
 ---
 
 # Block scope -- how it works
