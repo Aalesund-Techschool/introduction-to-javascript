@@ -545,6 +545,108 @@ function loadSettings() {
 level: 2
 ---
 
+# Type Coercion in JavaScript
+
+JavaScript automatically converts types when needed - this is called "type coercion"
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+## Implicit Coercion (Automatic)
+
+```js {monaco-run}
+// String + Number → String
+console.log("5" + 3)      // "53"
+
+// Number / String -> Number
+console.log(12 / "6")     // 2
+
+// converting string to number
+console.log(typeof +"5" ) // number
+console.log(typeof "5" )  // string
+```
+
+</div>
+
+<div>
+
+```js {monaco-run}
+// Boolean → Number
+console.log(true + 1)    // 2
+console.log(false + 1)   // 1
+
+// Comparison with ==
+console.log(
+  "0" == 0,             // true
+  false == 0,           // true
+  null == undefined,    // true
+  "0" == false          // true
+)
+```
+
+</div>
+</div>
+
+---
+
+## Explicit Coercion (Manual)
+<div>
+
+```js
+// To String
+String(123)   // "123"
+(123).toString() // "123"
+
+// To Number
+Number("123")  // 123
+parseInt("123") // 123
++"123"        // 123
+
+// To Boolean
+Boolean(0)    // false
+Boolean("")   // false
+Boolean(null) // false
+Boolean(undefined) // false
+!!123         // true
+```
+
+</div>
+
+---
+layout: full
+class: text-sm
+---
+
+## Falsy values
+
+| Value                                                        | Type      | Description                                                  |
+| :----------------------------------------------------------- | :-------- | :----------------------------------------------------------- |
+| [null](https://developer.mozilla.org/en-US/docs/Glossary/Null) | Null      | The keyword [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null) — the absence of any value. |
+| [undefined](https://developer.mozilla.org/en-US/docs/Glossary/Undefined) | Undefined | [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) — the primitive value. |
+| `false`                                                      | Boolean   | The keyword [`false`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_words). |
+| [NaN](https://developer.mozilla.org/en-US/docs/Glossary/NaN) | Number    | [`NaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) — not a number. |
+| `0`                                                          | Number    | The [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) zero, also including `0.0`, `0x0`, etc. |
+| `-0`                                                         | Number    | The [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) negative zero, also including `-0.0`, `-0x0`, etc. |
+| `0n`                                                         | BigInt    | The [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) zero, also including `0x0n`, etc. Note that there is no [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) negative zero — the negation of `0n` is `0n`. |
+| `""`                                                         | String    | Empty [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) value, also including `''` and ````. |
+| [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all) | Object    | The only falsy object in JavaScript is the built-in [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all). |
+
+*Source: https://developer.mozilla.org/en-US/docs/Glossary/Falsy*
+
+---
+layout: statement
+---
+
+<div v-click class="mt-4 px-4 py-2 bg-amber-100 rounded dark:bg-amber-900 dark:bg-opacity-50 text-align-left">
+  <div class="font-bold">Best Practice</div>
+  <div>Use strict equality (<code>===</code>) to avoid unexpected type coercion in comparisons</div>
+  <div class="text-sm mt-1">Example: <code>"0" === 0</code> is <code>false</code>, while <code>"0" == 0</code> is <code>true</code></div>
+</div>
+
+---
+level: 2
+---
+
 # JavaScript Best Practices
 
 <div class="grid grid-cols-2 gap-4">
@@ -605,7 +707,7 @@ const addFive = (number = 42) => {
 <div class="mt-6 grid grid-cols-3 gap-4">
 <div v-click>
 
-## Frameworks & Libraries
+### Frameworks & Libraries
 
 - React
 - Vue
@@ -617,7 +719,7 @@ const addFive = (number = 42) => {
 </div>
 <div v-click>
 
-## Build Tools
+### Build Tools
 
 - Webpack
 - Vite
@@ -628,7 +730,7 @@ const addFive = (number = 42) => {
 </div>
 <div v-click>
 
-## Testing
+### Testing
 
 - Jest
 - Mocha
@@ -639,7 +741,7 @@ const addFive = (number = 42) => {
 </div>
 <div v-click>
 
-## Package Management
+### Package Management
 
 - npm
 - yarn
@@ -648,7 +750,7 @@ const addFive = (number = 42) => {
 </div>
 <div v-click>
 
-## TypeScript
+### TypeScript
 
 - Static typing
 - Better tooling
@@ -658,7 +760,7 @@ const addFive = (number = 42) => {
 </div>
 <div v-click>
 
-## Modern Runtimes
+### Modern Runtimes
 
 - Node.js
 - Deno
@@ -731,4 +833,4 @@ Start writing JavaScript today!
 - How references are handled
 - Factory functions
 - Type coercion
- -->
+- -->
