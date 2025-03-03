@@ -29,7 +29,6 @@ image: https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-
 <div class="absolute bottom-10 right-10 text-align-right">
   <p class="font-700">Steffen Holanger - Boitano</p>
   <p class="font-700">Christoffer Træen - Twoday</p>
-  <p class="font-700">Chris Aardal - Tings</p>
 </div>
 
 <!--
