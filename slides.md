@@ -20,10 +20,16 @@ layout: intro-image
 image: https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg?tx=w_1920,q_auto
 ---
 
+<div class='absolute top-38 left-80'>
+ 
+## Introduction to
+ 
+</div>
+
 <div class="absolute bottom-10 right-10 text-align-right">
-  <p class="font-700">Steffen Holanger,Boitano</p>
-  <p class="font-700">Christoffer Træen, Twoday</p>
-  <p class="font-700">Chris Årdal, Tings</p>
+  <p class="font-700">Steffen Holanger - Boitano</p>
+  <p class="font-700">Christoffer Træen - Twoday</p>
+  <p class="font-700">Chris Aardal - Tings</p>
 </div>
 
 <!--
@@ -32,13 +38,12 @@ Welcome to this introduction to JavaScript!
 
 ---
 transition: slide-left
+layout: intro
 ---
 
 # What is JavaScript?
 
 JavaScript is a high-level, interpreted programming language primarily used for:
-
-<v-clicks>
 
 - Creating interactive web pages
 - Client-side web development
@@ -46,8 +51,6 @@ JavaScript is a high-level, interpreted programming language primarily used for:
 - Mobile applications
 - Game development
 - Desktop applications
-
-</v-clicks>
 
 <div v-click class="mt-10 text-center text-orange-400">
 <carbon-warning class="inline-block mr-1"/> Not to be confused with Java - they're completely different languages!
@@ -64,8 +67,6 @@ layoutClass: gap-4
 
 # A Brief History
 
-<v-clicks>
-
 - **1995**: Created by Brendan Eich at Netscape in just 10 days
 - **1996**: Submitted to ECMA International for standardization
 - **1997**: ECMAScript 1 released (official standard)
@@ -74,11 +75,9 @@ layoutClass: gap-4
 - **2015**: ECMAScript 2015 (ES6) - major update
 - **Now**: Yearly updates (ES2022, ES2023, etc.)
 
-</v-clicks>
-
 ::right::
 
-<div v-click="1" class="mt-12 ml-6">
+<div  class="mt-12 ml-6">
   <img src="https://cdn.facesofopensource.com/wp-content/uploads/2017/07/23193713/brendaneich25607.web_.jpg" class="h-80 rounded shadow" />
   <p class="text-sm mt-1">Brendan Eich, creator of JavaScript</p>
 </div>
@@ -139,7 +138,10 @@ server.listen(3000)
 </div>
 
 ---
+layout: center
+---
 
+<div class="grid grid-cols-2 gap-x-4">
 <div class="mt-8">
 
 ### Other Environments
@@ -149,6 +151,8 @@ server.listen(3000)
 - Mobile frameworks (React Native)
 - Desktop apps (Electron)
 
+</div>
+<img src="https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png">
 </div>
 
 ---
@@ -163,6 +167,30 @@ By convention `camelCase` is being used for all variables.
 var oldWay = 'Avoid using var' // Function-scoped
 let mutable = 'Can be changed' // Block-scoped
 const immutable = "Can't change*" // Block-scoped
+```
+
+---
+
+# Block scope -- how it works
+
+A block is all code between `{` and `}`
+
+```js {monaco-run} {autorun:false}
+let a = 'Hi'
+{
+  console.log(a)
+  a = 'hello'
+  {
+    console.log(a)
+    const b = 'bye'
+  }
+  console.log(a)
+  console.log(b)
+  var c = 'I am global'
+}
+
+console.log(c)
+
 ```
 
 ---
@@ -187,14 +215,90 @@ let colors = ['red', 'blue'] // Array
 ```
 
 ---
+level: 2
+---
+
+# Type Coercion in JavaScript
+
+JavaScript automatically converts types when needed - this is called "type coercion"
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+
+## Implicit Coercion (Automatic)
+
+```js {monaco-run}
+// String + Number → String
+console.log("5" + 3)      // "53"
+
+// Number / String -> Number
+console.log(12 / "6")     // 2
+
+// converting string to number
+console.log(typeof +"5" ) // number
+console.log(typeof "5" )  // string
+```
+
+</div>
+
+<div>
+
+```js {monaco-run}
+// Boolean → Number
+console.log(true + 1)    // 2
+console.log(false + 1)   // 1
+
+// Comparison with ==
+console.log(
+  "0" == 0,             // true
+  false == 0,           // true
+  null == undefined,    // true
+  "0" == false          // true
+)
+```
+
+</div>
+</div>
+
+---
+
+## Explicit Coercion (Manual)
+<div>
+
+```js {all|1-3|5-8|10-15|all}
+// To String
+String(123)         // "123" 
+(123).toString()    // "123" 
+
+// To Number
+Number("123")       // 123 
+parseInt("123")     // 123 
++"123"              // 123 
+
+// To Boolean
+Boolean(0)          // false 
+Boolean("")         // false 
+Boolean(null)       // false 
+Boolean(undefined)  // false 
+!!123               // true 
+```
+
+</div>
+
+---
 
 ## Functions
 
-```js {all|1-4|6-9|11-12|all}
+```js {all|1-4|6-9|11-14|16-17|all}
 // Traditional function
 function greet(name) {
   return `Hello, ${name}!`
 }
+
+// Anonymous
+(function (name) {
+  return  `Hello ${name}`
+})()
 
 // Arrow function
 const greet = (name) => {
@@ -209,9 +313,16 @@ const greet = (name) => `Hello, ${name}!`
 
 </div>
 
+<!-- Functions in functions -->
+
+---
+layout: two-cols-header
+layoutClass: gap-4
 ---
 
 ## Control Flow
+
+::left::
 
 ```js {all|1-4|6-12|14-16|18-20|all}
 // Conditionals
@@ -234,6 +345,20 @@ while(timeIsPassing) {
 do {
   console.log("Learn to code")
 } while (youCan)
+```
+::right::
+
+```js {monaco-run} {autorun:false}
+for (const value of [1, 2, 3]) {
+  console.log(value);
+}
+
+const person = { name: 'John', age: 30, job: 'developer' }
+
+for (const key in person) {
+  const value = person[key]
+  console.log(`${key}: ${value}`)
+}
 ```
 
 ---
@@ -542,82 +667,11 @@ function loadSettings() {
 </div>
 
 ---
-level: 2
----
-
-# Type Coercion in JavaScript
-
-JavaScript automatically converts types when needed - this is called "type coercion"
-
-<div class="grid grid-cols-2 gap-4">
-<div>
-
-## Implicit Coercion (Automatic)
-
-```js {monaco-run}
-// String + Number → String
-console.log("5" + 3)      // "53"
-
-// Number / String -> Number
-console.log(12 / "6")     // 2
-
-// converting string to number
-console.log(typeof +"5" ) // number
-console.log(typeof "5" )  // string
-```
-
-</div>
-
-<div>
-
-```js {monaco-run}
-// Boolean → Number
-console.log(true + 1)    // 2
-console.log(false + 1)   // 1
-
-// Comparison with ==
-console.log(
-  "0" == 0,             // true
-  false == 0,           // true
-  null == undefined,    // true
-  "0" == false          // true
-)
-```
-
-</div>
-</div>
-
----
-
-## Explicit Coercion (Manual)
-<div>
-
-```js
-// To String
-String(123)   // "123"
-(123).toString() // "123"
-
-// To Number
-Number("123")  // 123
-parseInt("123") // 123
-+"123"        // 123
-
-// To Boolean
-Boolean(0)    // false
-Boolean("")   // false
-Boolean(null) // false
-Boolean(undefined) // false
-!!123         // true
-```
-
-</div>
-
----
-layout: full
+layout: cover
 class: text-sm
 ---
 
-## Falsy values
+## Falsy values 
 
 | Value                                                        | Type      | Description                                                  |
 | :----------------------------------------------------------- | :-------- | :----------------------------------------------------------- |
@@ -627,21 +681,9 @@ class: text-sm
 | [NaN](https://developer.mozilla.org/en-US/docs/Glossary/NaN) | Number    | [`NaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) — not a number. |
 | `0`                                                          | Number    | The [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) zero, also including `0.0`, `0x0`, etc. |
 | `-0`                                                         | Number    | The [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) negative zero, also including `-0.0`, `-0x0`, etc. |
-| `0n`                                                         | BigInt    | The [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) zero, also including `0x0n`, etc. Note that there is no [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) negative zero — the negation of `0n` is `0n`. |
-| `""`                                                         | String    | Empty [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) value, also including `''` and ````. |
+| `0n`                                                         | BigInt    | The [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) zero, also including `0x0n`, etc. |
+| `""`                                                         | String    | Empty [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) value, also including `''` and ` `` `. |
 | [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all) | Object    | The only falsy object in JavaScript is the built-in [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all). |
-
-*Source: https://developer.mozilla.org/en-US/docs/Glossary/Falsy*
-
----
-layout: statement
----
-
-<div v-click class="mt-4 px-4 py-2 bg-amber-100 rounded dark:bg-amber-900 dark:bg-opacity-50 text-align-left">
-  <div class="font-bold">Best Practice</div>
-  <div>Use strict equality (<code>===</code>) to avoid unexpected type coercion in comparisons</div>
-  <div class="text-sm mt-1">Example: <code>"0" === 0</code> is <code>false</code>, while <code>"0" == 0</code> is <code>true</code></div>
-</div>
 
 ---
 level: 2
@@ -655,7 +697,7 @@ level: 2
 <v-clicks>
 
 - Use `const` and `let` instead of `var`
-- Prefer strict equality (`===`) over loose equality (`==`)
+- Prefer strict equality (`===`) over loose equality (`==`) --- Example: <code>"0" === 0</code> is <code>false</code>, while <code>"0" == 0</code> is <code>true</code>
 - Avoid global variables
 - Use meaningful variable and function names
 - Comment your code (but make it self-documenting)
@@ -832,5 +874,6 @@ Start writing JavaScript today!
 - Functional programming
 - How references are handled
 - Factory functions
-- Type coercion
-- -->
+- running in node
+- working with the debug console
+-->
