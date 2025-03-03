@@ -514,25 +514,26 @@ layoutClass: gap-4
 
 JavaScript handles async operations with:
 
-<v-clicks>
+<v-click>
 
 - Callbacks (traditional)
 - Promises (ES6)
 - Async/await (modern)
 
-</v-clicks>
+</v-click>
 
 <div v-click class="mt-4">
 
 ## Callbacks
 
-```js
+```js {monaco-run} {autorun:false}
 function fetchData(callback) {
   setTimeout(() => {
     callback('Data received')
   }, 1000)
 }
 
+console.log('start')
 fetchData(function (data) {
   console.log(data) // After 1 second: "Data received"
 })
@@ -547,7 +548,7 @@ fetchData(function (data) {
 
 ## Promises
 
-```js
+```js {monaco-run} {autorun:false}
 function fetchData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
