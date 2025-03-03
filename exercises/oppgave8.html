@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 8: Stein, Saks, Papir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .game-container {
+            margin: 30px 0;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .choice {
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+        .choice:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+        .result {
+            margin: 20px 0;
+            font-size: 20px;
+            font-weight: bold;
+            min-height: 30px;
+        }
+        .score {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px auto;
+            max-width: 300px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 8: Stein, Saks, Papir</h1>
+    
+    <div class="game-container">
+        <h2>Velg din hånd:</h2>
+        <div class="choices">
+            <button class="choice" onclick="playGame('stein')">✊ Stein</button>
+            <button class="choice" onclick="playGame('saks')">✌️ Saks</button>
+            <button class="choice" onclick="playGame('papir')">✋ Papir</button>
+        </div>
+        
+        <div class="result" id="result">
+            <!-- Resultat vil vises her -->
+        </div>
+        
+        <div class="score">
+            <div>
+                <h3>Spiller</h3>
+                <span id="playerScore">0</span>
+            </div>
+            <div>
+                <h3>Datamaskin</h3>
+                <span id="computerScore">0</span>
+            </div>
+        </div>
+        
+        <button onclick="resetScore()">Nullstill poeng</button>
+    </div>
+
+    <script>
+        // Din kode her:
+        let playerScore = 0;
+        let computerScore = 0;
+        
+        // Funksjon for å spille en runde
+        function playGame(playerChoice) {
+            // Generer datamaskinens valg (tilfeldig)
+            // Tips: Bruk Math.random() og et array med valgene
+            
+            // Sammenlign valgene og avgjør vinneren
+            // Oppdater poengstillingen
+            // Vis resultatet
+        }
+        
+        // Funksjon for å avgjøre vinneren
+        function determineWinner(playerChoice, computerChoice) {
+            // Bestem hvem som vinner basert på reglene:
+            // Stein slår saks, saks slår papir, papir slår stein
+            // Returner "player", "computer" eller "tie"
+        }
+        
+        // Funksjon for å oppdatere resultatteksten
+        function updateResult(playerChoice, computerChoice, winner) {
+            // Oppdater resultat-elementet med informasjon om runden
+        }
+        
+        // Funksjon for å nullstille poengstillingen
+        function resetScore() {
+            // Nullstill poengstillingen og oppdater visningen
+        }
+    </script>
+</body>
+</html>

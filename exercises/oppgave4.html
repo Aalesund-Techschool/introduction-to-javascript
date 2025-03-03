@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 4: ToDo-liste</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .task-input {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .task-input input {
+            flex: 1;
+            padding: 8px;
+        }
+        .task-input button {
+            padding: 8px 15px;
+            margin-left: 5px;
+        }
+        .task-actions button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 4: ToDo-liste</h1>
+    
+    <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Legg til oppgave...">
+        <button onclick="addTask()">Legg til</button>
+    </div>
+    
+    <ul id="taskList">
+        <!-- Oppgaver vil bli lagt til her -->
+    </ul>
+
+    <script>
+        // Din kode her:
+        
+        function addTask() {
+            // Hent oppgaveteksten fra input-feltet
+            // Lag et nytt li-element med oppgaveteksten
+            // Legg til knapper for å markere som fullført og slette
+            // Legg til li-elementet i listen
+        }
+        
+        function toggleComplete(element) {
+            // Marker en oppgave som fullført/ikke-fullført
+            // Tips: Legg til/fjern CSS-klassen "completed"
+        }
+        
+        function deleteTask(element) {
+            // Fjern oppgaven fra listen
+        }
+    </script>
+</body>
+</html>

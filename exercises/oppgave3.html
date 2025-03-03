@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 3: Gjett tallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #feedback {
+            margin: 20px 0;
+            font-weight: bold;
+            min-height: 20px;
+        }
+        #attempts {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 3: Gjett tallet</h1>
+    <p>Jeg tenker på et tall mellom 1 og 20. Kan du gjette hvilket?</p>
+    
+    <button id="start-btn" onclick="startGame()">Start spill</button>
+    
+    <div id="game-area" style="display: none;">
+        <div id="attempts">Antall forsøk: 0</div>
+        <div id="feedback"></div>
+        <button onclick="makeGuess()">Gjett!</button>
+    </div>
+
+    <script>
+        // Din kode her:
+        let randomNumber;
+        let attempts = 0;
+        
+        function startGame() {
+            // Generer et tilfeldig tall mellom 1 og 20
+            // Nullstill antall forsøk
+            // Vis spillområdet
+        }
+        
+        function makeGuess() {
+            // Be brukeren gjette et tall ved hjelp av prompt()
+            // Sammenligne gjetningen med det tilfeldige tallet
+            // Gi tilbakemelding: for høyt, for lavt, eller riktig
+            // Oppdater antall forsøk
+        }
+    </script>
+</body>
+</html>

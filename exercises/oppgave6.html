@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 6: Bildekarusell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .carousel-container {
+            position: relative;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .carousel-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .carousel-buttons {
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 0 5px;
+        }
+        .auto-play {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 6: Bildekarusell</h1>
+    
+    <div class="carousel-container">
+        <img id="carouselImage" class="carousel-image" src="https://via.placeholder.com/600x400?text=Bilde+1" alt="Karusellbilde">
+        
+        <div class="carousel-buttons">
+            <button onclick="previousImage()">Forrige</button>
+            <button onclick="nextImage()">Neste</button>
+        </div>
+        
+        <div class="auto-play">
+            <button id="autoPlayButton" onclick="toggleAutoPlay()">Start automatisk</button>
+        </div>
+    </div>
+
+    <script>
+        // Din kode her:
+        
+        // Array med bildeadresser
+        const images = [
+            "https://via.placeholder.com/600x400?text=Bilde+1",
+            "https://via.placeholder.com/600x400?text=Bilde+2",
+            "https://via.placeholder.com/600x400?text=Bilde+3",
+            "https://via.placeholder.com/600x400?text=Bilde+4"
+        ];
+        
+        let currentImageIndex = 0;
+        let autoPlayInterval = null;
+        
+        // Funksjon for å vise gjeldende bilde
+        function showCurrentImage() {
+            // Oppdater bilde-elementet med gjeldende bilde
+        }
+        
+        // Funksjon for å vise neste bilde
+        function nextImage() {
+            // Øk bildeindeksen og vis bildet
+            // Husk å starte fra begynnelsen når du når slutten
+        }
+        
+        // Funksjon for å vise forrige bilde
+        function previousImage() {
+            // Reduser bildeindeksen og vis bildet
+            // Husk å gå til slutten når du er på det første bildet
+        }
+        
+        // Funksjon for å slå av/på automatisk bildeskift
+        function toggleAutoPlay() {
+            // Hvis automatisk avspilling er på, stopp den
+            // Ellers start automatisk avspilling med intervall på 3 sekunder
+            // Oppdater knappeteksten
+        }
+    </script>
+</body>
+</html>

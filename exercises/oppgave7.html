@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 7: Asynkron JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        #loading {
+            display: none;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .error {
+            color: red;
+            margin: 20px 0;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 7: Asynkron JavaScript</h1>
+    
+    <button id="fetchButton" onclick="fetchData()">Hent data</button>
+    <div id="loading">Laster inn data...</div>
+    <div id="error" class="error"></div>
+    
+    <div class="container" id="dataContainer">
+        <!-- Data vil bli vist her -->
+    </div>
+
+    <script>
+        // Din kode her:
+        
+        // Funksjon for å hente data fra JSONPlaceholder API
+        function fetchData() {
+            // Vis laster-melding
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('error').innerHTML = '';
+            document.getElementById('dataContainer').innerHTML = '';
+            
+            // Bruk fetch API til å hente data
+            // URL eksempel: 'https://jsonplaceholder.typicode.com/posts'
+            
+            // Håndter responsen og vis dataene
+            
+            // Håndter eventuelle feil
+        }
+        
+        // Funksjon for å vise dataene på nettsiden
+        function displayData(data) {
+            // Lag HTML-elementer basert på dataene
+            // Tips: Bruk forEach og createElement eller template literals
+            
+            // Skjul laster-melding
+            document.getElementById('loading').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 9: JavaScript-klasser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .demo-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .output {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 9: JavaScript-klasser</h1>
+    
+    <div class="demo-container">
+        <h2>Demonstrasjon av klasser</h2>
+        <button onclick="demonstrateClasses()">Kjør demonstrasjon</button>
+        <div id="classOutput" class="output"></div>
+    </div>
+
+    <script>
+        // Din kode her:
+        
+        // Definer en Person-klasse
+        class Person {
+            // Konstruktør med navn, alder og kjønn
+            constructor(name, age, gender) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+            }
+            
+            // Metode for å beskrive personen
+            describe() {
+                return `${this.name} er ${this.age} år gammel og er ${this.gender}.`;
+            }
+            
+            // Metode for å ha bursdag
+            haveBirthday() {
+                this.age++;
+                return `${this.name} har nå bursdag og er ${this.age} år gammel!`;
+            }
+        }
+        
+        // Definer en Student-klasse som arver fra Person
+        // Tips: Bruk "extends" nøkkelordet
+        
+        // Funksjon for å demonstrere klassene
+        function demonstrateClasses() {
+            const output = document.getElementById('classOutput');
+            output.innerHTML = '';
+            
+            // Opprett instanser av klassene
+            // Kall noen av metodene
+            // Vis resultatene i output-elementet
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 10: Interaktivt kart</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #map-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #header {
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        #map {
+            flex-grow: 1;
+            width: 100%;
+        }
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-container">
+        <div id="header">
+            <h1>Oppgave 10: Interaktivt kart</h1>
+            <p>Klikk på markørene for mer informasjon</p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Din kode her:
+        
+        // Funksjon for å initialisere kartet
+        function initMap() {
+            // Opprett kart-objektet
+            // Tips: Bruk L.map('map').setView([latitude, longitude], zoom)
+            
+            // Legg til et kartlag, for eksempel OpenStreetMap
+            // Tips: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
+            
+            // Definer interessante steder
+            const places = [
+                { 
+                    name: "Oslo", 
+                    position: [59.9139, 10.7522], 
+                    description: "Norges hovedstad" 
+                },
+                // Legg til flere steder her
+            ];
+            
+            // Legg til markører for hvert sted
+            // For hvert sted, opprett en markør og legg til popup
+        }
+        
+        // Kall initMap når vinduet er lastet
+        window.onload = initMap;
+    </script>
+</body>
+</html>

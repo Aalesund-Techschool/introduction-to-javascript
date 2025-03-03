@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 5: Data-filtrering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgave 5: Data-filtrering</h1>
+    
+    <div class="controls">
+        <button onclick="sortByPrice()">Sorter etter pris</button>
+        <select id="categoryFilter" onchange="filterByCategory()">
+            <option value="alle">Alle kategorier</option>
+            <option value="elektronikk">Elektronikk</option>
+            <option value="klær">Klær</option>
+            <option value="mat">Mat</option>
+        </select>
+    </div>
+    
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Pris</th>
+                <th>Kategori</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Produkter vil bli lagt til her -->
+        </tbody>
+    </table>
+    
+    <div class="stats" id="productStats">
+        <!-- Statistikk vil bli vist her -->
+    </div>
+
+    <script>
+        // Eksempeldata: Array med produkter
+        const products = [
+            { id: 1, name: "Laptop", price: 8999, category: "elektronikk" },
+            { id: 2, name: "T-skjorte", price: 299, category: "klær" },
+            { id: 3, name: "Kaffe", price: 89, category: "mat" },
+            { id: 4, name: "Mobiltelefon", price: 4999, category: "elektronikk" },
+            { id: 5, name: "Jeans", price: 799, category: "klær" },
+            { id: 6, name: "Brød", price: 39, category: "mat" }
+        ];
+        
+        // Din kode her:
+        
+        // Funksjon for å vise produktene i tabellen
+        function displayProducts(productsToShow) {
+            // Tøm tabellen og vis produktene
+            // Tips: Bruk document.querySelector og innerHTML
+        }
+        
+        // Sorter produktene etter pris
+        function sortByPrice() {
+            // Sorter produktene etter pris (stigende eller synkende)
+            // Vis de sorterte produktene
+        }
+        
+        // Filtrer produktene etter kategori
+        function filterByCategory() {
+            // Hent valgt kategori fra select-elementet
+            // Filtrer produktene basert på kategorien
+            // Vis filtrerte produkter
+        }
+        
+        // Finn dyreste og billigste produkt
+        function updateStats() {
+            // Finn dyreste og billigste produkt
+            // Vis informasjon i statistikk-elementet
+        }
+        
+        // Initialiser siden ved å vise alle produktene
+        window.onload = function() {
+            displayProducts(products);
+            updateStats();
+        };
+    </script>
+</body>
+</html>
