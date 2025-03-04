@@ -892,4 +892,10 @@ Start writing JavaScript today!
 - Factory functions
 - running in node
 - working with the debug console
+
+About the exercises
+- No right or wrong implementation. Be curious, creative and playful
+- You are free to use AI and google as much as you please. 
+- I recommend not copying code but write it line for line. It makes you internalize the content better
+- Give simple demo of how to run the code
 -->
