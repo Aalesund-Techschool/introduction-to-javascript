@@ -58,7 +58,7 @@ import { readFileSync } from 'node:fs';
 // --- Lag en variabel data og sett den til resultatet av map-metoden.
 
 /**
- * Du skal nå prosessere linjene i dataLines.
+ * Du skal nå prosessere linjene i data variabelen.
  * Hver linje skal nå inneholde alle kolonner for den linjen.
  * Det er 5 kolonner i hver linje.
  * Bruk enten indeksering eller destrukturering for å hente ut verdiene fra listen.
