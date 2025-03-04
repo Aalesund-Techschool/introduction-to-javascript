@@ -1,3 +1,4 @@
+import {logTask} from './_helper.mjs';
 /**
  * Vi skal se på objekter i JavaScript.
  * Objekter er en samling av egenskaper og metoder.
@@ -12,13 +13,14 @@
     age: 30,
  }
 
+logTask('Oppgave 1');
 /**
  * Bruk console.log til å skrive ut person-objektet til terminalen.
  */
 
 // -- Din kode her --
 
-
+logTask('Oppgave 2');
 /**
  * For å hente ut en egenskap fra et objekt, kan vi bruke dot notation.
  * For eksempel: person.firstName
@@ -36,6 +38,8 @@
 
 // -- Din kode her --
 
+
+logTask('Oppgave 3');
 /**
  * Du kan også endre egenskaper i et objekt.
  * For eksempel: person.firstName = 'Kari'
@@ -43,5 +47,4 @@
  * Personnen har hatt bursdag og er nå 31 år.
  * Endre alderen til person-objektet til 31 og skriv ut person-objektet til terminalen.
  */
-
 // -- Din kode her --
