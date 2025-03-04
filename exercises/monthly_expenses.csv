@@ -1,0 +1,39 @@
+Expense,Category,Quantity,VAT,Total
+Groceries,Food,1,2.5,52.5
+Electricity Bill,Utilities,1,5.0,105.0
+Internet Bill,Utilities,1,3.0,63.0
+Netflix Subscription,Entertainment,1,1.5,15.5
+Gasoline,Transport,1,4.0,84.0
+Bus Ticket,Transport,5,0.5,10.5
+Coffee,Food,10,0.2,22.2
+Lunch at Restaurant,Food,4,1.8,39.6
+Gym Membership,Health,1,2.0,42.0
+Doctor Visit,Health,1,5.0,105.0
+Medicine,Health,3,1.0,31.0
+Books,Education,2,2.5,52.5
+Streaming Service,Entertainment,1,2.0,42.0
+Water Bill,Utilities,1,2.0,42.0
+Movie Ticket,Entertainment,2,1.5,31.5
+Parking Fee,Transport,6,0.5,10.5
+Haircut,Personal Care,1,1.5,31.5
+Laundry,Household,1,2.0,42.0
+Fast Food,Food,3,1.2,25.2
+Concert Ticket,Entertainment,1,5.0,105.0
+Taxi,Transport,2,2.5,52.5
+Phone Bill,Utilities,1,3.0,63.0
+Clothing,Shopping,2,5.0,105.0
+Shoes,Shopping,1,6.0,126.0
+Online Course,Education,1,4.0,84.0
+Home Cleaning,Household,1,3.5,73.5
+Charity Donation,Misc,1,0.0,50.0
+Pet Food,Pets,1,1.5,31.5
+Snacks,Food,5,0.3,10.5
+Birthday Gift,Gifts,1,4.5,94.5
+Printer Ink,Office,1,2.0,42.0
+Laptop Repair,Technology,1,6.5,136.5
+Garden Supplies,Household,1,2.0,42.0
+Car Wash,Transport,1,1.5,31.5
+Festival Entry,Entertainment,1,3.0,63.0
+Cooking Class,Education,1,4.0,84.0
+Bicycle Repair,Transport,1,2.5,52.5
+Massage,Health,1,3.0,63.0
